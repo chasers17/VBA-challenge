@@ -130,12 +130,17 @@ Sub StockExchange()
     For i = 2 To LastRow
         If Cells(i, 11).Value > 0 Then
             Cells(i, 11).Interior.Color = vbGreen
+            Cells(i, 12).Interior.Color = vbGreen
             
         ElseIf Cells(i, 11).Value < 0 Then
             Cells(i, 11).Interior.Color = vbRed
+            Cells(i, 12).Interior.Color = vbRed
             
         Else
+            If Cells(i, 11).Value <> "" Or Cells(i, 12).Value <> "" Then
             Cells(i, 11).Interior.Color = vbYellow
+            Cells(i, 12).Interior.Color = vbYellow
+            End If
             
         End If
         
@@ -185,6 +190,7 @@ Sub StockExchange()
     Next ws
             
 End Sub
+
 
 
 
